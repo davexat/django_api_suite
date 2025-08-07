@@ -29,7 +29,7 @@ class LandingApi(APIView):
 
         ref = db.reference(f'{self.collection_name}')
         current_time  = datetime.now()
-        iso_format = current_time.strftime("%Y-%m-%dT%H:%M:%S.%fZ")[:-3] + "Z"
+        iso_format = current_time.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
         data.update({"date": iso_format })
 
         new_resource = ref.push(data)
